@@ -1,0 +1,309 @@
+:root {
+    --darkBg: #12121a;
+    --lightBg: #f2f2f2;
+    --darkFrosted: #12121a7f;
+    --lightFrosted: #f2f2f27a;
+    --darkFont: #f2f2f2;
+    --lightFont: #12121a;
+    --textFont: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #fff;
+}
+
+.parent {
+    background-color: var(--lightBg);
+    height: 100vh;
+    box-sizing: border-box;
+    color: var(--lightFont);
+    font-family: var(--textFont);
+    position: relative;
+    scroll-behavior: smooth;
+    overflow: auto;
+    transition: all .3s ease-in-out;
+}
+
+.parent.theme {
+    background-color: var(--darkBg);
+    color: var(--darkFont);
+}
+
+.navbar {
+    background-color: var(--lightFrosted);
+    border-bottom: 2px solid var(--darkBg);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all .3s ease-in-out;
+}
+
+.parent.theme .navbar {
+    border-bottom-color: var(--lightBg);
+    background-color: var(--darkFrosted);
+}
+
+.navbar .logo {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 15px;
+}
+
+.navbar ul a {
+    color: inherit;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all .3s ease-in-out;
+    text-underline-offset: 0px;
+    text-decoration-thickness: 1px;
+}
+
+.navbar ul a:hover {
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+}
+
+.navbar .toggle,
+.navbar .menu {
+    display: flex;
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid var(--lightFont);
+    border-radius: 5px;
+    align-items: center;
+    padding: 2px 5px;
+    color: inherit;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar .menu {
+    display: none;
+}
+
+.parent.theme .toggle,
+.toggle:hover,
+.parent.theme .menu,
+.menu:hover {
+    border-color: var(--lightBg);
+    background-color: #000;
+    color: #fff;
+}
+
+.parent.theme .toggle:hover,
+.parent.theme .menu:hover {
+    background-color: var(--lightBg);
+    color: var(--darkBg);
+}
+
+.navbar .mobile-nav {
+    width: 100%;
+    background-color: var(--lightBg);
+    color: var(--darkBg);
+    position: absolute;
+    left: 0;
+    text-transform: uppercase;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px 15px 30px 15px;
+    opacity: 0;
+    visibility: hidden;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.navbar .mobile-nav button {
+    align-self: flex-end;
+    border: 1px solid var(--lightBg);
+}
+
+.navbar .mobile-nav.active,
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar .mobile-nav a {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 800;
+    top: 0;
+    left: 0;
+    background-color: #12121a7f;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.home {
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 2em;
+}
+
+.home>h1 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+.home>p {
+    font-size: .6em;
+    text-align: center;
+    width: 50%;
+    margin: 10px auto 30px auto;
+}
+
+.home .calculators {
+    font-size: .5em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.calculators .calc-box {
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #80808049;
+    border: 2px solid transparent;
+    color: var(--lightFont);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: all .3s ease-in-out;
+}
+.calculators .calc-box:hover {
+    box-shadow: 2px 5px 10px #1f1f1f;
+    border-color: #000;
+}
+.parent.theme .calc-box {
+    background-color: #12121ae8;
+    background-color: #297fff49;
+    box-shadow: 2px 5px 10px transparent;
+    color: var(--darkFont);
+}
+.parent.theme .calc-box:hover {
+    border-color: #fff;
+    box-shadow: 0 1px 10px #fff;
+}
+
+.calc-box h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.calc-box>p {
+    text-align: center;
+}
+
+.calc-box form {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-box label {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.calc-box form input {
+    margin: 5px 0 15px 0;
+    padding: 10px;
+    font-size: .9em;
+    border-radius: 5px;
+    font-weight: 500;
+    border: 2px solid transparent;
+    font-family: inherit;
+    transition: .3s all ease-in-out;
+}
+
+.calc-box form input:hover {
+    border-color: var(--darkBg);
+}
+
+.calc-box form input::placeholder {
+    font-weight: 400;
+}
+
+.solution {
+    border: 1px solid #000;
+    color: var(--darkFont);
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: var(--darkBg);
+    transition: all .3s ease-in-out;
+}
+.parent.theme .solution {
+    background-color: var(--lightBg);
+    color: var(--darkBg);
+}
+
+@media screen and (max-width: 800px) {
+    .navbar .desk-nav li {
+        display: none;
+    }
+
+    .navbar .menu {
+        display: inherit;
+    }
+
+    .navbar,
+    .home {
+        padding: 20px 15px;
+    }
+    .home {
+        font-size: 1.8em;
+    }
+
+    .home>h1 {
+        font-size: 1em;
+    }
+
+    .home>p {
+        width: 100%;
+    }
+
+    .home .calculators {
+        width: 100%;
+        gap: 50px;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    
+    .navbar .mobile-nav, .overlay {
+        display: none;
+    }
+}
