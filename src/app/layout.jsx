@@ -5,10 +5,31 @@ export const metadata = {
   title: "Surface Area Calculator",
   description: "A surface area calculator built by GROUP D, Computer Science Class 27",
   icons: {
-    icon: null,
-    shortcut: null,
-    apple: null
-  }
+    icon: "./calculator.png",
+    shortcut: "./preview.png",
+    apple: "./calculator.png"
+  },
+  images: [
+    {
+      url: "./preview.png",
+      width: 1200,
+      height: 630,
+      alt: "Preview of the Surface Area Calculator app",
+    },
+  ],
+  keywords: ["geometry", "surface area", "cone", "pyramid", "cylinder"],
+  openGraph: {
+    title: "Surface Area Calculator",
+    description: "Interactive calculator for cones, pyramids, and cylinders.",
+    url: "https://groupdcalculator.vercel.app/",
+    siteName: "Math Tools",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Surface Area Calculator",
+    description: "Interactive calculator for cones, pyramids, and cylinders.",
+    images: ["./preview.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
