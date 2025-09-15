@@ -258,12 +258,23 @@ body {
 .solution {
     border: 1px solid #000;
     color: var(--darkFont);
-    padding: 10px;
+    padding: 20px;
     margin-top: 10px;
     box-sizing: border-box;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     background-color: var(--darkBg);
     transition: all .3s ease-in-out;
+}
+.solution h3 {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.solution p {
+    font-weight: 500;
+    font-size: 1em;
 }
 .parent.theme .solution {
     background-color: var(--lightBg);

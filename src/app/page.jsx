@@ -54,7 +54,7 @@ export default function Home() {
           <button onClick={toggleMenu} className="menu"><ion-icon name="menu"></ion-icon></button>
         </ul>
         <ul className={`mobile-nav ${activeMenu ? "active" : ""}`}>
-        <button onClick={toggleMenu} className="menu"><ion-icon name="menu"></ion-icon></button>
+          <button onClick={toggleMenu} className="menu"><ion-icon name="menu"></ion-icon></button>
           <li><a onClick={toggleMenu} href="#cone">Cone Surface Area</a></li>
           <li><a onClick={toggleMenu} href="#pyramid">Square Pyramid Surface Area</a></li>
           <li><a onClick={toggleMenu} href="#cylinder">Cylinder Surface Area</a></li>
@@ -76,9 +76,8 @@ export default function Home() {
               <label>Height</label>
               <input type="number" placeholder="Enter Height" value={coneHeight} onChange={(e) => setConeHeight(Number(e.target.value))} />
               <div className="solution">
-                <p>
-                  Result: {coneArea.toFixed(2)}
-                </p>
+                <p> Result: {coneArea.toFixed(2)} </p>
+                <h3> Formula: SA = πr(l + r), l = √(r² + h²) </h3>
               </div>
             </form>
           </div>
@@ -92,9 +91,8 @@ export default function Home() {
               <label>Height</label>
               <input type="number" placeholder="Enter Height" value={pyramidHeight} onChange={(e) => setPyramidHeight(Number(e.target.value))} />
               <div className="solution">
-                <p>
-                  Result: {pyramidArea.toFixed(2)}
-                </p>
+                <p> Result: {pyramidArea.toFixed(2)} </p>
+                <h3> Formula: SA = b² + 2b√((b/2)² + h²) </h3>
               </div>
             </form>
           </div>
@@ -108,9 +106,8 @@ export default function Home() {
               <label>Height</label>
               <input type="number" placeholder="Enter Height" value={cylHeight} onChange={(e) => setCylHeight(Number(e.target.value))} />
               <div className="solution">
-                <p>
-                  Result: {cylinderArea.toFixed(2)}
-                </p>
+                <p> Result: {cylinderArea.toFixed(2)} </p>
+                <h3> Formula: SA = 2πr(h + r) </h3>
               </div>
             </form>
           </div>
