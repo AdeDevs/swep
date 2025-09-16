@@ -22,6 +22,19 @@ export default function Home() {
   const [cylRadius, setCylRadius] = useState("");
   const [cylHeight, setCylHeight] = useState("");
 
+  const handleChange = (setter) => (e) => {
+    const value = e.target.value;
+  
+    if (value === "") {
+      setter(""); // allow clearing input
+    } else {
+      const num = Number(value);
+      if (num >= 0) {
+        setter(value); // keep as string
+      }
+    }
+  };
+
   // --- Formulas ---
   // Cone surface area = πr(l + r) where l = slant height = √(r² + h²)
   const coneArea =
@@ -72,9 +85,9 @@ export default function Home() {
             <p>Calculate the total surface area of a cone</p>
             <form>
               <label>Base Radius</label>
-              <input type="number" placeholder="Enter Radius" value={coneRadius} onChange={(e) => setConeRadius(Number(e.target.value))} />
+              <input type="number" placeholder="Enter Radius" value={coneRadius} onChange={handleChange(setConeRadius)} />
               <label>Height</label>
-              <input type="number" placeholder="Enter Height" value={coneHeight} onChange={(e) => setConeHeight(Number(e.target.value))} />
+              <input type="number" placeholder="Enter Height" value={coneHeight} onChange={handleChange(setConeHeight)} />
               <div className="solution">
                 <p> Result: {coneArea.toFixed(2)} </p>
                 <h3> Formula: SA = πr(l + r), l = √(r² + h²) </h3>
@@ -87,9 +100,9 @@ export default function Home() {
             <p>Calculate the total surface area of a square pyramid</p>
             <form>
               <label>Base Side Length</label>
-              <input type="number" placeholder="Enter Base Side" value={pyramidBase} onChange={(e) => setPyramidBase(Number(e.target.value))} />
+              <input type="number" placeholder="Enter Base Side" value={pyramidBase} onChange={handleChange(setPyramidBase)} />
               <label>Height</label>
-              <input type="number" placeholder="Enter Height" value={pyramidHeight} onChange={(e) => setPyramidHeight(Number(e.target.value))} />
+              <input type="number" placeholder="Enter Height" value={pyramidHeight} onChange={handleChange(setPyramidHeight)} />
               <div className="solution">
                 <p> Result: {pyramidArea.toFixed(2)} </p>
                 <h3> Formula: SA = b² + 2b√((b/2)² + h²) </h3>
@@ -102,9 +115,9 @@ export default function Home() {
             <p>Calculate the total surface area of a cylinder</p>
             <form>
               <label>Base Radius</label>
-              <input type="number" placeholder="Enter Radius" value={cylRadius} onChange={(e) => setCylRadius(Number(e.target.value))} />
+              <input type="number" placeholder="Enter Radius" value={cylRadius} onChange={handleChange(setCylRadius)} />
               <label>Height</label>
-              <input type="number" placeholder="Enter Height" value={cylHeight} onChange={(e) => setCylHeight(Number(e.target.value))} />
+              <input type="number" placeholder="Enter Height" value={cylHeight} onChange={handleChange(setCylHeight)} />
               <div className="solution">
                 <p> Result: {cylinderArea.toFixed(2)} </p>
                 <h3> Formula: SA = 2πr(h + r) </h3>
