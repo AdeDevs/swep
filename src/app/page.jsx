@@ -42,7 +42,6 @@ export default function Home() {
       ? Math.PI * coneRadius * (Math.sqrt(coneRadius ** 2 + coneHeight ** 2) + coneRadius)
       : 0;
 
-  // Square Pyramid surface area = b² + 2b * slant height
   // slant height = √((b/2)² + h²)
   const pyramidArea =
     pyramidBase && pyramidHeight
