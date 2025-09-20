@@ -2,18 +2,25 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [activeTheme, setActiveTheme] = useState(() => {
+  const [activeTheme, setActiveTheme] = useState(false) // default value
+
+  // Read from localStorage after mount
+  useEffect(() => {
     const stored = localStorage.getItem("theme")
-    return stored === "true"
-  })
-  
+    if (stored !== null) {
+      setActiveTheme(stored === "true")
+    }
+  }, [])
+
+  // Write to localStorage whenever theme changes
   useEffect(() => {
     localStorage.setItem("theme", activeTheme.toString())
   }, [activeTheme])
-  
+
   const toggleTheme = () => {
     setActiveTheme(prev => !prev)
   }
+
   
   
 
@@ -66,7 +73,7 @@ export default function Home() {
 
 
   return (
-    <div className={`parent ${activeTheme ? "theme" : ""}`}>
+<div className={`parent ${activeTheme ? "theme" : ""}`}>
       <nav className="navbar">
         <h1 className="logo">Surface Area Calculator</h1>
         <ul className="desk-nav">
