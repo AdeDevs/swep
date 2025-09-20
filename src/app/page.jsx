@@ -1,11 +1,22 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [activeTheme, setActiveTheme] = useState()
+  const [activeTheme, setActiveTheme] = useState(() => {
+    const stored = localStorage.getItem("theme")
+    return stored === "true"
+  })
+  
+  useEffect(() => {
+    localStorage.setItem("theme", activeTheme.toString())
+  }, [activeTheme])
+  
   const toggleTheme = () => {
-    setActiveTheme(!activeTheme)
+    setActiveTheme(prev => !prev)
   }
+  
+  
+
   const [activeMenu, setActiveMenu] = useState()
   const toggleMenu = () => {
     setActiveMenu(!activeMenu)
