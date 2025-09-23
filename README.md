@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📘 Surface Area Calculator
 
-## Getting Started
+A **Next.js web app** for calculating the surface area of three 3D shapes:  
+- **Cone**  
+- **Square Pyramid**  
+- **Cylinder**
 
-First, run the development server:
+The app provides formulas, real-time calculations, and a theme toggle for light/dark mode.
 
+---
+
+## ✨ Features
+- 🧮 **Surface area calculators** for cone, pyramid, and cylinder  
+- 🔄 **Real-time updates** as users type  
+- 📐 **Formula display** alongside results  
+- 🌗 **Dark/Light theme toggle** (saved in localStorage)  
+- 📱 **Responsive navigation** with desktop & mobile menus  
+- 🚫 **Input validation** (no negatives or invalid values)  
+
+---
+
+## 🛠️ Tech Stack
+- [Next.js](https://nextjs.org/) (App Router)  
+- React Hooks (`useState`, `useEffect`)  
+- LocalStorage for theme persistence  
+- [Ionicons](https://ionic.io/ionicons) for icons  
+- CSS (custom styling)
+
+---
+
+## 📂 Project Structure
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+surface-area-calculator/
+├── app/
+│   └── page.js         # Main Next.js app code
+├── public/             # Assets & icons
+├── styles/
+│   └── globals.css     # Global styling
+├── package.json
+└── README.md
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
