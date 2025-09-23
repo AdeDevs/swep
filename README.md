@@ -28,14 +28,3 @@ The app provides formulas, real-time calculations, and a theme toggle for light/
 
 ---
 
-## 📂 Project Structure
-```bash
-surface-area-calculator/
-├── app/
-│   └── page.js         # Main Next.js app code
-├── public/             # Assets & icons
-├── styles/
-│   └── globals.css     # Global styling
-├── package.json
-└── README.md
-
