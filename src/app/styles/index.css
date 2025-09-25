@@ -281,6 +281,16 @@ body {
     color: var(--darkBg);
 }
 
+.cone-toggle {
+    width: 100%;
+    display: flex;
+    margin: 5px 0 10px 0;
+}
+.calc-box form .cone-toggle input {
+    padding: 0;
+    margin: 0;
+}
+
 @media screen and (max-width: 800px) {
     .navbar .logo {
         font-weight: 500;
