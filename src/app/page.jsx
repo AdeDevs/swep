@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [activeTheme, setActiveTheme] = useState(false);
+  const [welcomeMessage, setWelcomeMessage] = useState(false)
+  const toggleWelcome = () => {
+    setWelcomeMessage(!welcomeMessage)
+  }
 
   // Read from localStorage after mount
   useEffect(() => {
@@ -94,6 +98,10 @@ export default function Home() {
   // ----------------------------
   return (
     <div className={`parent ${activeTheme ? "theme" : ""}`}>
+      <div className={`msg ${welcomeMessage ? "close" : ""}`}>
+        <h1>This calculator was built by <a href="https://iamadedevs.vercel.app/" target="_blank">AdeDevs</a></h1>
+        <button onClick={toggleWelcome}>Open</button>
+      </div>
       <nav className="navbar">
         <h1 className="logo">Surface Area Calculator</h1>
         <ul className="desk-nav">
