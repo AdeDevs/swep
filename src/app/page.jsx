@@ -204,13 +204,13 @@ export default function Home() {
   // RENDER
   return (
     <div className={`parent ${activeTheme ? "theme" : ""}`}>
-      <div className={`msg ${welcomeMessage ? "close" : ""}`}>
+      {/* <div className={`msg ${welcomeMessage ? "close" : ""}`}>
         <h1>This calculator was built by <a href="https://iamadedevs.vercel.app/" target="_blank" rel="noreferrer">AdeDevs</a></h1>
         <button onClick={toggleWelcome}>Open</button>
-      </div>
+      </div> */}
 
       <nav className="navbar">
-        <h1 className="logo">Surface Area Calculator</h1>
+        <h1 className="logo"><a href="/">Surface Area Calculator</a></h1>
         <ul className="desk-nav">
           <li><a href="#cone">Cone</a></li>
           <li><a href="#pyramid">Pyramid</a></li>
